@@ -20,9 +20,7 @@ function reverseString(normalString) {
 
 function dispalyString(switchedString) {
 
-  // templateDiv = `<h3 class="text-gradient text-info mb-0 mt-2"><span class="brand-font">${switchedString}</span></h3>`;
-
-  document.getElementById("message").innerHTML = `The Switched String is: ${switchedString}`;
+  document.getElementById("message").innerHTML = `${switchedString}`;
 
   document.getElementById("alert").classList.remove("invisible");
 }

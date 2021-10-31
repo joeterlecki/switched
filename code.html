@@ -86,12 +86,58 @@
         <div class="col-lg-5">
           <h3 class="text-gradient text-info mb-0 mt-2"><span class="brand-font">Switched</span></h3>
           <h3>The Code</h3>
+          <p>The function <span class="text-info text-gradient">getString</span> receives the string from the browser
+            based on a button click event.</p>
+
+          <p>The first step is to ensure that the alert cards are invisible and get the string from the <span
+              class="text-info text-gradient">normalString</span> HTML ID.</p>
+
+          <p>Once the string is received, the functions <span class="text-info text-gradient"> reverseString</span> and
+            <span class="text-info text-gradient"> displayString</span> execute to reverse the input and display it
+            to the <span class="text-info text-gradient">DOM</span> respectively.</p>
+
+          <p>The function <span class="text-info text-gradient">reverseString</span> takes the input and loops over the
+            string in reverse order. This is completed by applying a <span class="text-info text-gradient">-1</span> of
+            the starting index. Then for the length of the string, which is tracked by using the length method and
+            iteratively decrementing the index
+            .</p>
+          <p>This is repeated until the whole string has been looped over. As each character is looped over, it is
+            appended to switched string array. After the last character has been appended, the loop exits and returns.
+          </p>
+          <p>The function <span class="text-info text-gradient">displayString</span> recieved the output of
+            reverseString and displayed the results by getting the message id from the HTML and adding the value using a
+            template literal to the DOM.</p>
+          <p>Finally, immediately after the message is added to the page, the class 'invisible' is removed from the
+            alert using the classList.Remove method.</p>
         </div>
         <div class="col-lg-7 mt-lg-0 mt-5 ps-lg-0 ps-0">
           <div class="card d-flex justify-content-center p-4 shadow-lg">
             <pre class="line-numbers"><code class="language-javascript">
-              function helloWorld() {
-                alert("hello world");
+              function getString() {
+                document.getElementById("alert").classList.add("invisible");
+                let normalString = document.getElementById("normalString").value;
+                let switchedString = reverseString(normalString);
+              
+                dispalyString(switchedString);
+              
+              }
+              
+              function reverseString(normalString) {
+                let switchedString = [];
+              
+                for (let character = normalString.length - 1; character >= 0; character--) {
+                  switchedString += normalString[character];
+                }
+              
+                return switchedString;
+              
+              }
+              
+              function dispalyString(switchedString) {
+              
+                document.getElementById("message").innerHTML = `${switchedString}`;
+              
+                document.getElementById("alert").classList.remove("invisible");
               }
             </code></pre>
           </div>

@@ -4,11 +4,9 @@ on:
     branches:
       - 'master'
 
-
 env:
   BUCKET_NAME: switched.joeterlecki.io
   CF_DISTRO_ID: E37H2YMTDUP32D
-
 
 jobs:
   deploy: 

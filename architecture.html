@@ -89,46 +89,24 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5">
-          <h3 class="text-gradient text-info mb-0 mt-2"><span class="brand-font">Switched</span></h3>
-          <h3>A Coding Project</h3>
-          <p>Got a string and want to reverse it? Switch can do it for you. Time to start reading right to left. As our
-            slogan states, "the right way is wrong!"</p>
-          <h4>Instructions</h4>
-          <p>Please enter your desired string and hit the button to swtich it. Your results will be instant.</p>
+          <h3 class="text-gradient text-primary mb-0 mt-2"><span class="brand-font">Switched</span></h3>
+          <h3>Architecture</h3>
+          <p>This application is deployed in <span class="text-gradient text-primary">AWS</span> using serverless
+            technologies. The frontend is deployed with bootstrap
+            using a static s3 bucket.</p>
+          <p>The assets are then served using <span class="text-gradient text-primary">CloudFront CDN</span> and <span
+              class="text-gradient text-primary">ACM Certificate Management for SSL</span>.</p>
+          <p>The application logic is deployed with <span class="text-gradient text-primary">API Gateway</span> and <span
+              class="text-gradient text-primary">Lambda Proxy</span> Integration with a <span
+              class="text-gradient text-primary">Python backend</span>.</p>
+          <p>The switched application logic sends a <span class="text-gradient text-primary">GET</span> request through an
+            API Gateway endpoint with the supplied string
+            and then the backend Lambda executes the event with the queryStringParameters to return a reveresed string to the
+            DOM and displayed using some Javascript.</p>
         </div>
         <div class="col-lg-7 mt-lg-0 mt-5 ps-lg-0 ps-0">
           <div class="card d-flex justify-content-center p-4 shadow-lg">
-            <div class="text-center">
-              <h3 class="text-gradient text-info">Enter Your String</h3>
-            </div>
-            <div class="card card-plain">
-              <form role="form" id="contact-form" method="post" autocomplete="off">
-                <div class="card-body pb-2">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <label>String</label>
-                      <div class="input-group mb-4">
-                        <input class="form-control" placeholder="String" aria-label="String" type="text"
-                          id="normalString" value="SwitchThisMessage">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 text-center mb-4">
-                      <button type="button" class="btn bg-gradient-info mt-3 mb-0" id="btn-submit">Switch It</button>
-                    </div>
-                  </div>
-
-                  <div class="mb-0 mt-md-0 mt-6">
-                    <div class="alert alert-info invisible fade show" id="alert" role="alert">
-                      <h4 class="alert-heading"><span class="brand-font text-white">See The Switch!</span></h4>
-                      <p class="brand-font text-white mb-0" id="message"></p>
-                    </div>
-
-                  </div>
-                </div>
-              </form>
-            </div>
+            <img src="./assets/img/switched-diagram.png">
           </div>
         </div>
       </div>
